@@ -1,6 +1,6 @@
 # WebXROS
 
-<img src='webxros.svg'/>
+<img src='src/assets/webxros.svg'/>
 
 # Install 
 
