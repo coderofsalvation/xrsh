@@ -11,7 +11,7 @@
     <script src="https://coderofsalvation.github.io/webxros-apps/helloworld.js"></script> 
   </head>
   <body>
-    <a-scene light="defaultLightsEnabled: false" helloworld>
+    <a-scene light="defaultLightsEnabled: false" helloworld boot>
       <a-entity id="player" wasd-controls look-controls>
         <a-entity id="left-hand"  laser-controls="hand: left" raycaster="objects:.ray" blink-controls="cameraRig:#player; teleportOrigin: #camera; collisionEntities: #floor"></a-entity>
         <a-entity id="right-hand" laser-controls="hand: right" raycaster="objects:.ray" blink-controls="cameraRig:#player; teleportOrigin: #camera; collisionEntities: #floor"></a-entity>
