@@ -11,7 +11,11 @@
     <script src="https://coderofsalvation.github.io/xrshell-apps/helloworld.js"></script> 
   </head>
   <body>
-    <a-scene light="defaultLightsEnabled: false" helloworld boot>
+    <a-scene light="defaultLightsEnabled: false" xrshell>
+      <a-box      helloworld position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+      <a-sphere   helloworld position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+      <a-cylinder helloworld position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+
       <a-entity id="player" wasd-controls look-controls>
         <a-entity id="left-hand"  laser-controls="hand: left" raycaster="objects:.ray" blink-controls="cameraRig:#player; teleportOrigin: #camera; collisionEntities: #floor"></a-entity>
         <a-entity id="right-hand" laser-controls="hand: right" raycaster="objects:.ray" blink-controls="cameraRig:#player; teleportOrigin: #camera; collisionEntities: #floor"></a-entity>
