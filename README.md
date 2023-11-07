@@ -1,4 +1,4 @@
-# WebXROS
+# xrsh
 
 <img src='src/assets/logo.svg' width="25%"/>
 
