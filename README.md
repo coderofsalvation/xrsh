@@ -2,6 +2,10 @@
 
 <img src='src/assets/logo.svg' width="25%"/>
 
+# Wiki / Roadmap
+
+See [the wiki here](https://forgejo.isvery.ninja/xrsh/xrsh/wiki/Home#milestones)
+
 # Install 
 
 Surf to the public [webinstance](https://coderofsalvation.github.io/xrsh) or download the [standalone binary](https://) in the releases section <br>
