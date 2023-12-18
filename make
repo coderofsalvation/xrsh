@@ -1,6 +1,6 @@
 #!/bin/sh
 REDBEAN_VERSION=https://redbean.dev/redbean-2.2.com
-APP=xrshell
+APP=xrsh
 
 export PATH=$PATH:.
 silent(){ "$@" 1>/dev/null 2>/dev/null; }
