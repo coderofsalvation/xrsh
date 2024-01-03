@@ -23,6 +23,11 @@ standalone(){
 }
 
 dev(){
+  test -d xrsh-apps || git clone https://forgejo.isvery.ninja/xrsh/xrsh-apps
+  cd src
+  ln -s ../xrsh-apps/app .
+  ln -s ../xrsh-apps/com .
+  cd -
   cd /tmp
   test -f redbean.com || wget "$REDBEAN_VERSION" -O redbean.com && chmod 755 redbean.com
   test -f cert.pem    || openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem

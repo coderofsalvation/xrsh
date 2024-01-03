@@ -18,8 +18,8 @@
       <a-sphere   position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
       <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
 
-      <a-entity position=" 0   1.5 -1" rotation="0  20 0" app="uri: app/windowmanager.js; foo: bar"></a-entity>
-      <a-entity position=" 0 1.5 -1"   rotation="0   0 0" app="uri: app/helloworld.js; foo: bar"></a-entity>
+      <a-entity position="    0 1.5 -1" app="uri: app/helloworld.js; foo: bar"></a-entity>
+      <a-entity app="uri: app/apptiler.js; foo: bar"></a-entity>
 
       <a-entity id="player" wasd-controls look-controls>
         <a-entity id="left-hand"  laser-controls="hand: left" raycaster="objects:.ray" blink-controls="cameraRig:#player; teleportOrigin: #camera; collisionEntities: #floor"></a-entity>
