@@ -115,11 +115,22 @@ button,input,.btn{
 .winbox .wb-full{
   display:none !important;
 }
-body .winbox *{  
+.winbox *{  
   color:       var(--xrsh-light-gray);
   font-size:   var(--xrsh-font-size-1); 
   font-family: var(--xrsh-font-sans-serif);
 }
+
+.winbox input[type=text]{
+  color: var(--xrsh-dark-gray);
+  border-radius: 6px;
+  color: var(--xrsh-dark-gray);
+  height: 25px;
+  margin-bottom: 2px;
+  border-block: none;
+  border: none;  
+}
+
 
 /*
  * icons for non-XR (please source from https://css.gg
