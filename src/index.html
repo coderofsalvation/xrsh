@@ -4,6 +4,7 @@
     <title>xrsh</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="./index.css"></link>
     <script src="./assets/aframe.min.js"></script>
     <script src="com/app.js"></script> 
     
@@ -19,9 +20,11 @@
       <a-sphere   position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
       <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
 
-      <a-entity position="    0 1.5 -1" app="uri: app/helloworld.js; foo: bar"></a-entity>
-      <a-entity position="    0 1.5 -1" app="uri: app/manual.js; foo: bar"></a-entity>
-      <a-entity app="uri: app/apptiler.js; foo: bar"></a-entity>
+      <a-entity app="uri: app/helloworld.js;            foo: lorem ipsum" position="0 2 -2" scale="0.5 0.5 0.5"></a-entity>
+      <a-entity app="uri: app/helloworld-html.js;       foo: lorem ipsum" position="0 2 -2"></a-entity>
+      <a-entity app="uri: app/helloworld-htmlform.js;   foo: lorem ipsum" position="0 1.25 -2"></a-entity>
+      <a-entity app="uri: app/helloworld-window.js;     foo: lorem ipsum" position="1 1.25 -2"></a-entity>
+      <a-entity app="uri: app/manual.js;                foo: lorem ipsum" position="1 1.25 -2.5"></a-entity>
 
       <a-entity id="player" wasd-controls look-controls>
         <a-entity id="left-hand"  laser-controls="hand: left" raycaster="objects:.ray" blink-controls="cameraRig:#player; teleportOrigin: #camera; collisionEntities: #floor">

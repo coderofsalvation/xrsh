@@ -8,7 +8,11 @@ See [the wiki here](https://forgejo.isvery.ninja/xrsh/xrsh/wiki/Home#milestones)
 
 # Install 
 
-Surf to the public [webinstance](https://coderofsalvation.github.io/xrsh) or download the [standalone binary](https://) in the releases section <br>
+No need! Just surf to the public version [here](https://coderofsalvation.github.io/xrsh) or download the [standalone binary](https://) in the releases section <br>
 The apps live in the [apps-repo](https://github.com/coderofsalvation/xrsh-apps).<br>
 
-> <b>developers:</b> visit `src` via local webserver, or run `./make dev` (spins up a [redbean.com](https://redbean.dev) https-server)
+# Developers 
+
+<b>developers:</b> run `./make dev` (spins up a [redbean.com](https://redbean.dev) https-server)
+
+> NOTE: if you value optimization over prototype-ability, you can minify the code by running `cd src && npm install parcel && parcel index.html`

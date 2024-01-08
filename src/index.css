@@ -1,0 +1,156 @@
+/* 
+ * HTML-2-WebGL limitations / guidelines for html-mesh compatibility:
+ * no icon libraries (favicon e.g.)
+ * in case of 'border-radius: 2px 3px 4px 5px' (2px will apply to all corners)
+ * dont use transform: scale(1.2) e.g.   
+ */
+
+:root {
+  --xrsh-primary: #3aacff;
+  --xrsh-primary-fg: #FFF;
+  --xrsh-light-primary: #00a3Ff;
+  --xrsh-secondary: #872eff;
+  --xrsh-third: #ce7df2;
+  --xrsh-box-shadow: #0005;
+  --xrsh-dark-gray: #343334;
+  --xrsh-gray: #424280;
+  --xrsh-white: #fdfdfd;
+  --xrsh-light-gray: #efefef;
+  --xrsh-lighter-gray: #e4e2fb96;
+  --xrsh-window-radius: 10px;
+  --xrsh-font-sans-serif: system-ui, -apple-system, segoe ui, roboto, ubuntu, helvetica, cantarell, noto sans, sans-serif;
+  --xrsh-font-monospace: menlo, monaco, lucida console, liberation mono, dejavu sans mono, bitstream vera sans mono, courier new, monospace, serif;
+  --xrsh-font-size-0: 12px;
+  --xrsh-font-size-1: 14px;
+  --xrsh-font-size-2: 17px;
+  --xrsh-font-size-3: 21px;
+  --xrsh-modal-button-bg: #CCC;
+  --xrsh-modal-button-fg: #FFF;
+}
+
+body,
+html.a-fullscreen body{
+  color:       var(--xrsh-light-gray);
+  font-size:   var(--xrsh-font-size-1); 
+  font-family: var(--xrsh-font-sans-serif);
+  accent-color: var(--xrsh-light-primary);
+  line-height:22px;
+}
+
+h1,h2,h3,h4,h5{
+  color: var(--xrsh-light-gray);
+}
+h1      {  font-size: var(--xrsh-font-size-3); }
+h2,h3,h4{  font-size: var(--xrsh-font-size-2); }
+
+a,a:visited,a:active{
+  color: var(--xrsh-light-primary);
+}
+
+/*
+ * Form elements
+ */ 
+
+button,.btn,input[type=submit]{
+  border-radius:7px;
+  background: var(--xrsh-primary);
+  color: var(--xrsh-primary-fg); 
+  transition:0.3s;
+  padding: 10px;
+  font-weight: bold;
+  border: none;
+  cursor:pointer;
+}
+button:hover,.btn:hover,input[type=submit]:hover{
+  background: var(--xrsh-white);
+  color: var(--xrsh-dark-gray) !important;
+}
+
+legend{
+  font-size: var(--xrsh-font-size-0);
+  margin-bottom: 15px;
+  border-bottom: 1px solid var(--xrsh-light-primary);
+}
+
+body .winbox fieldset,
+fieldset{
+  border: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 0px;
+  margin-bottom: 5px;
+}
+label{
+  margin-left:10px;
+}
+button,input,.btn{
+  margin-bottom:10px;
+}
+[type="checkbox"], [type="radio"]{
+  transform: scale(1.4);
+  margin-left:3px;
+}
+
+/*
+ * WinBox (windows) theme 
+ */ 
+.winbox {
+  box-shadow:none !important;
+  background:transparent !important;
+}
+.winbox .wb-body{
+  background: var(--xrsh-dark-gray);     
+  margin-top: -6px !important;
+  z-index: 100;
+}
+.winbox .wb-header{ 
+  background: var(--xrsh-light-primary); 
+  font-weight: bold;
+  border-radius: var(--xrsh-window-radius) var(--xrsh-window-radius) 0px 0px;
+  line-height:30px;
+}
+.winbox .wb-control{
+  height:29px;
+}
+.winbox .wb-full{
+  display:none !important;
+}
+body .winbox *{  
+  color:       var(--xrsh-light-gray);
+  font-size:   var(--xrsh-font-size-1); 
+  font-family: var(--xrsh-font-sans-serif);
+}
+
+/*
+ * icons for non-XR (please source from https://css.gg
+ *  
+ *  (NOTE: they will not be visible in XR)
+ */
+.gg-stack,
+.gg-stack::after,
+.gg-stack::before {
+    display: block;
+    box-sizing: border-box;
+    width: 14px;
+    height: 14px;
+    border: 2px solid
+}
+.gg-stack {
+    margin-right: 8px;
+    margin-top: 8px;
+    transform: scale(var(--ggs,1)) translate(14px,-1px);
+    position: relative
+}
+.gg-stack::after,
+.gg-stack::before {
+    content: "";
+    position: absolute;
+    border-left: 0;
+    border-bottom: 0;
+    right: -5px;
+    top: -5px
+}
+.gg-stack::before {
+    right: -8px;
+    top: -8px
+}
