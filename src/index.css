@@ -1,8 +1,9 @@
 /* 
  * HTML-2-WebGL limitations / guidelines for html-mesh compatibility:
- * no icon libraries (favicon e.g.)
- * in case of 'border-radius: 2px 3px 4px 5px' (2px will apply to all corners)
- * dont use transform: scale(1.2) e.g.   
+ * - no icon libraries (favicon e.g.)
+ * - in case of 'border-radius: 2px 3px 4px 5px' (2px will apply to all corners)
+ * - dont use transform: scale(1.2) e.g.   
+ * - dont use pseudoclasses like :before or :after (they mess up html-to-canvas conversion)
  */
 
 :root {
@@ -102,6 +103,7 @@ button,input,.btn{
   background: var(--xrsh-dark-gray);     
   margin-top: -6px !important;
   z-index: 100;
+  border: 1px solid #FFF3;
 }
 .winbox .wb-header{ 
   background: var(--xrsh-light-primary); 
@@ -112,6 +114,10 @@ button,input,.btn{
 .winbox .wb-control{
   height:29px;
 }
+.winbox .wb-control > span{
+  background-size: 12px auto !important;
+}
+
 .winbox .wb-full{
   display:none !important;
 }

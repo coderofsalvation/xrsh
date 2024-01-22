@@ -19,11 +19,16 @@
       <a-sphere   position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
       <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
 
+      <a-entity app="uri: app/launcher.js"   ></a-entity>
+      <a-entity app="uri: app/spatialize.js" ></a-entity>
+      <a-entity app="uri: app/vconsole.js"   ></a-entity>
+      <a-entity app="uri: app/xrfragments.js"></a-entity>
+      <a-entity app="uri: app/isoterminal.js"></a-entity>
+      <a-entity app="uri: app/manual.js;                foo: lorem ipsum" position="1 1.25 -2.2"></a-entity>
       <a-entity app="uri: app/helloworld.js;            foo: lorem ipsum" position="-1 2 -2" scale="0.5 0.5 0.5"></a-entity>
       <a-entity app="uri: app/helloworld-html.js;       foo: lorem ipsum" position="0 2 -2"></a-entity>
       <a-entity app="uri: app/helloworld-htmlform.js;   foo: lorem ipsum" position="0 1.25 -2"></a-entity>
       <a-entity app="uri: app/helloworld-window.js;     foo: lorem ipsum" position="1 1.25 -2"></a-entity>
-      <a-entity app="uri: app/manual.js;                foo: lorem ipsum" position="1 1.25 -2.2"></a-entity>
 
       <a-entity id="player" wasd-controls look-controls>
         <a-entity id="left-hand"  laser-controls="hand: left" raycaster="objects:.ray,html,[html]" blink-controls="cameraRig:#player; teleportOrigin: #camera; collisionEntities: #floor">
@@ -35,10 +40,6 @@
         <a-entity id="right-hand" laser-controls="hand: right" raycaster="objects:.ray,[html]" blink-controls="cameraRig:#player; teleportOrigin: #camera; collisionEntities: #floor"></a-entity>
         <a-entity camera="fov:90"position="0 1.6 0" id="camera"></a-entity>
       </a-entity>
-
-
-      <!-- addressible & navigatable worlds -->
-      <a-entity xrf></a-entity>
 
     </a-scene>
 
