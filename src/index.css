@@ -1,9 +1,10 @@
 /* 
  * HTML-2-WebGL limitations / guidelines for html-mesh compatibility:
- * - no icon libraries (favicon e.g.)
- * - in case of 'border-radius: 2px 3px 4px 5px' (2px will apply to all corners)
- * - dont use transform: scale(1.2) e.g.   
- * - dont use pseudoclasses like :before or :after (they mess up html-to-canvas conversion)
+ *   - no icon libraries (favicon e.g.)
+ *   - in case of 'border-radius: 2px 3px 4px 5px' (2px will apply to all corners)
+ *   - dont use transform: scale(1.2) e.g.   
+ *   - dont use pseudoclasses like :before or :after (they mess up html-to-canvas conversion)
+ *   - use visibility:hidden/visible instead of display:none
  */
 
 :root {

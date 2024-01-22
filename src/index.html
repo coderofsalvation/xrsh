@@ -12,23 +12,19 @@
     <!-- <script>AFRAME.components['helloworld'].Component.prototype.dependencies["https://acme.com/myExtension.js"]</script> -->
 
   </head>
-  <body>
+  <body bgcolor="black">
     <a-scene webxr="overlayElement:#-overlay;" light="defaultLightsEnabled: true" cursor="rayOrigin: mouse" raycaster="objects: [html]; interval:100;">
 
-      <a-box      position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-sphere   position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-
-      <a-entity app="uri: app/launcher.js"   ></a-entity>
-      <a-entity app="uri: app/spatialize.js" ></a-entity>
+      <a-entity app="uri: app/launcher.js;" ></a-entity>
       <a-entity app="uri: app/vconsole.js"   ></a-entity>
       <a-entity app="uri: app/xrfragments.js"></a-entity>
-      <a-entity app="uri: app/isoterminal.js"></a-entity>
-      <a-entity app="uri: app/manual.js;                foo: lorem ipsum" position="1 1.25 -2.2"></a-entity>
-      <a-entity app="uri: app/helloworld.js;            foo: lorem ipsum" position="-1 2 -2" scale="0.5 0.5 0.5"></a-entity>
-      <a-entity app="uri: app/helloworld-html.js;       foo: lorem ipsum" position="0 2 -2"></a-entity>
-      <a-entity app="uri: app/helloworld-htmlform.js;   foo: lorem ipsum" position="0 1.25 -2"></a-entity>
-      <a-entity app="uri: app/helloworld-window.js;     foo: lorem ipsum" position="1 1.25 -2"></a-entity>
+      <a-entity app="uri: app/spatialize.js; order:-100" ></a-entity>
+      <a-entity app="uri: app/isoterminal.js" position="0 1.25 -2.1"></a-entity>
+      <a-entity app="uri: app/manual.js;    " position="1 1.25 -2.2"></a-entity>
+      <a-entity app="uri: app/example/helloworld.js;            foo: lorem ipsum" position="-1 2 -2" scale="0.5 0.5 0.5"></a-entity>
+      <a-entity app="uri: app/example/helloworld-html.js;       foo: lorem ipsum" position="0 2 -1.9"></a-entity>
+      <a-entity app="uri: app/example/helloworld-htmlform.js;   foo: lorem ipsum" position="0 1.25 -1.8"></a-entity>
+      <a-entity app="uri: app/example/helloworld-window.js;     foo: lorem ipsum" position="1 1.25 -1.7"></a-entity>
 
       <a-entity id="player" wasd-controls look-controls>
         <a-entity id="left-hand"  laser-controls="hand: left" raycaster="objects:.ray,html,[html]" blink-controls="cameraRig:#player; teleportOrigin: #camera; collisionEntities: #floor">
