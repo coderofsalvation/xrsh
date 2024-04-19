@@ -112,6 +112,9 @@ button,input,.btn{
   border-radius: var(--xrsh-window-radius) var(--xrsh-window-radius) 0px 0px;
   line-height:30px;
 }
+.winbox.max .wb-header{
+  border-radius:0px;
+}
 .winbox .wb-control{
   height:29px;
 }
