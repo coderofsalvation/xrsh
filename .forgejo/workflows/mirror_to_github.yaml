@@ -1,0 +1,14 @@
+on:
+  push:
+    branches:
+      - main
+jobs:
+  mirror_to_github:
+    runs-on: docker
+    steps:
+      - run: set
+      - run: mkdir ~/.ssh
+      - run: "echo \"$SSHKEY\" > ~/.ssh/id_rsa" 
+      - run: chmod 600 -R ~/.ssh
+      - run: git remote add github git@github.com:coderofsalvation/xrsh 
+      - run: git push github main
