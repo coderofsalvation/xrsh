@@ -7,6 +7,7 @@ jobs:
     runs-on: docker
     steps:
       - run: set
+      - uses: https://code.forgejo.org/actions/checkout@v3
       - run: mkdir ~/.ssh
       - run: "echo \"$SSHKEY\" > ~/.ssh/id_rsa" 
       - run: chmod 600 -R ~/.ssh
