@@ -1,0 +1,7 @@
+<a-box position="-2 2.5 -3" rotation="0 45 0" color="#000000"></a-box>
+<a-box position="-1 2.5 -3" rotation="0 45 0" color="#222222"></a-box>
+<a-box position="0 2.5 -3" rotation="0 45 0" color="#555555"></a-box>
+<a-box position="1 2.5 -3" rotation="0 45 0" color="#aaaaaa"></a-box>
+<a-box position="2 2.5 -3" rotation="0 45 0" color="#CCCCCC"></a-box>
+
+<a-entity app="uri: app/example/helloworld-iframe.js; url: 'https://fabien.benetou.fr/Cookbook/Electronics'" position="1 1.25 -1.7"></a-entity>
