@@ -12,7 +12,8 @@ See [the wiki here](https://forgejo.isvery.ninja/xrsh/xrsh/wiki/Home#milestones)
 > NOTE: installation not needed, just surf to the public version [here](https://coderofsalvation.github.io/xrsh)
 
 1. Download [xrsh.com](https://forgejo.isvery.ninja/xrsh/xrsh/raw/branch/main/xrsh.com)
-2. run `chmod +x xrsh.com` in your console
+2. optional: run `unzip xrsh.com` to verify repository contents
+3. run `chmod +x xrsh.com` in your console 
 3. run `./xrsh.com`
 4. Profit! ✔
 
