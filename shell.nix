@@ -13,6 +13,7 @@
 
       nodejs_20
       cosmopolitan
+      zip
 
     ];
 }

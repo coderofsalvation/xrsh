@@ -1,0 +1,3 @@
+[submodule "src/xrsh-apps"]
+	path = src/xrsh-apps
+	url = https://forgejo.isvery.ninja/xrsh/xrsh-apps.git
