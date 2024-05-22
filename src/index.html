@@ -11,7 +11,6 @@
     <script>
       // below is how you can test/customize/enforce global components to all apps
       // *TODO* replace the controller-converters below to a flexible remapper (milestone 3.7)
-      AFRAME.app.components['grabbable']            = '';
       AFRAME.app.components['pressable']            = 'com/control/pressable.js';
       // or enforce extensions/bugfixes without PR's or buildsteps
       //AFRAME.components['helloworld'].Component.prototype.dependencies["https://acme.com/myExtension.js"]
@@ -19,12 +18,58 @@
   </head>
   <body bgcolor="white">
     <a-scene light="defaultLightsEnabled: true"
+             obb-collider="showColliders: true"
              cursor="rayOrigin: mouse"
              renderer="colorManagement: true; highRefreshRate:true"
              xr-mode-ui="XRMode: xr"
              raycaster="objects: [html]; interval:100;">
+      <a-assets  timeout="10000">
+        <!-- Model by Socksthecat https://sketchfab.com/3d-models/character-accessory-watch-d2a883db37184592b5ea0ce4cbd2a286 -->
+        <a-asset-item id="watch"
+          src="https://cdn.aframe.io/examples/mixed-reality/watch/models/watch.glb"
+          response-type="arraybuffer"></a-asset-item>
+        <img crossorigin="anonymous" id="infoButton" src="https://cdn.aframe.io/examples/mixed-reality/watch/images/info-button.png" />
+        <img crossorigin="anonymous" id="infoButtonHover" src="https://cdn.aframe.io/examples/mixed-reality/watch/images/info-button-hover.png" />
+
+        <img crossorigin="anonymous" id="cubeButton" src="https://cdn.aframe.io/examples/mixed-reality/watch/images/cube-button.png" />
+        <img crossorigin="anonymous" id="cubeButtonHover" src="https://cdn.aframe.io/examples/mixed-reality/watch/images/cube-button-hover.png" />
+
+        <img crossorigin="anonymous" id="cylinderButton" src="https://cdn.aframe.io/examples/mixed-reality/watch/images/cylinder-button.png" />
+        <img crossorigin="anonymous" id="cylinderButtonHover" src="https://cdn.aframe.io/examples/mixed-reality/watch/images/cylinder-button-hover.png" />
+
+        <img crossorigin="anonymous" id="planeButton" src="https://cdn.aframe.io/examples/mixed-reality/watch/images/plane-button.png" />
+        <img crossorigin="anonymous" id="planeButtonHover" src="https://cdn.aframe.io/examples/mixed-reality/watch/images/plane-button-hover.png" />
+
+        <img crossorigin="anonymous" id="sphereButton" src="https://cdn.aframe.io/examples/mixed-reality/watch/images/sphere-button.png" />
+        <img crossorigin="anonymous" id="sphereButtonHover" src="https://cdn.aframe.io/examples/mixed-reality/watch/images/sphere-button-hover.png" />
+
+        <img crossorigin="anonymous" id="watchDisplayHover" src="https://cdn.aframe.io/examples/mixed-reality/watch/images/watch-display-hover.png" />
+
+        <img crossorigin="anonymous" id="palmButton" src="https://cdn.aframe.io/examples/mixed-reality/watch/images/palm-button.png" />
+        <img crossorigin="anonymous" id="palmButtonHover" src="https://cdn.aframe.io/examples/mixed-reality/watch/images/palm-button-hover.png" />
+        <a-mixin
+          id="cube"
+          geometry="primitive: box; width: 0.15; height: 0.15; depth: 0.15"
+          material="color: #4CC3D9"
+          grabbable></a-mixin>
+        <a-mixin id="sphere"
+          geometry="primitive: sphere; radius: 0.12"
+          material="color: #EF2D5E"
+          grabbable></a-mixin>
+        <a-mixin
+          id="plane"
+          rotation="90 0 0"
+          geometry="primitive: plane; width: 0.45; height: 0.45"
+          material="side: double; color: #7BC8A4"
+          grabbable></a-mixin>
+        <a-mixin
+          id="cylinder"
+          geometry="primitive: cylinder; radius: 0.075; height: 0.2"
+          material="color: #FFC65D"
+          grabbable></a-mixin>
+      </a-assets>
       <a-entity app="uri: app/launcher.js;" ></a-entity>
-      <a-entity _app="uri: app/vconsole.js"   ></a-entity>
+      <a-entity app="uri: app/vconsole.js"   ></a-entity>
       <a-entity _app="uri: app/xrfragments.js"></a-entity> 
       <a-entity app="uri: app/aframe-inspector.js; order:-50"></a-entity>
       <a-entity app="uri: app/spatialize.js;       order:-100" ></a-entity>
@@ -45,9 +90,9 @@
       <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
       <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
       <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-      <a-sky color="#ECECEC"></a-sky>
+      <!-- <a-sky color="#ECECEC"></a-sky> -->
 
-      <a-entity id="player" wasd-controls look-controls com="uri: com/control/patch-look-controls.js">
+      <a-entity id="player" wasd-controls="acceleration:30" look-controls com="uri: com/control/patch-look-controls.js">
         <a-entity camera="fov:90" position="0 1.6 0 " id="camera" com="uri: com/control/gaze-touch-to-click.js"></a-entity>
         <a-entity id="left-hand"  hand-tracking-controls="hand:left; modelColor: #cccccc" hand-tracking-grab-controls="hand: left;" laser-controls="hand: left" raycaster="objects:.ray,[html]" blink-controls="cameraRig:#player; teleportOrigin: #camera; collisionEntities: #floor">
         <a-entity rotation="-35 0 0" position="0 0.1 0" id="navigator">
