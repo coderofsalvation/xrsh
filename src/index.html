@@ -19,29 +19,26 @@
   </head>
   <body bgcolor="white">
     <a-scene light="defaultLightsEnabled: true"
-             obb-collider="showColliders: true"
              cursor="rayOrigin: mouse"
              renderer="colorManagement: true; highRefreshRate:true"
              xr-mode-ui="XRMode: xr"
+             obb-collider="showColliders:false"
              raycaster="objects: [html]; interval:100;">
 
       <a-assets timeout="1000">
         <a-asset-item id="environment" src="https://coderofsalvation.github.io/xrsh-media/assets/background.glb"></a-asset-item>
-        <a-mixin
-          id="menuitem"
-          geometry="primitive: plane; width: 0.15; height: 0.15"
-        </a-mixin>
+        <a-mixin id="menuitem"   geometry="primitive: plane; width: 0.15; height: 0.15; depth: 0.02" obb-collider="size: 0.03 0.03 0.03" ></a-mixin>
+        <a-mixin id="menubutton" geometry="primitive: circle; radius: 0.025" material="side: double; color:#4C73FE" 
+                                 obb-collider="size: 0.03 0.03 0.03" position="-0.003 -0.027 -0.077" rotation="94.53 -6.35 -59.0"></a-mixin>
       </a-assets>
 
-      <a-entity launcher="attach: #left-hand" dom position="0 1 0"></a-entity>
+      <a-entity launcher="attach: #left-hand; fingerTip: #right-hand;" dom position="-0.017 -0.094 -0.085" rotation="133.19 -24.75 -203.1"></a-entity>
 
-      <!--
-      <a-entity dom paste></a-entity>
-      <a-entity dom save></a-entity>
-      <a-entity dom helloworld></a-entity>
-      <a-entity dom helloworld-window></a-entity>
-      <a-entity dom xrfragments></a-entity>
-      -->
+      <a-entity paste></a-entity>
+      <a-entity save></a-entity>
+      <a-entity helloworld></a-entity>
+      <a-entity helloworld-window></a-entity>
+      <a-entity xrfragments></a-entity>
 
       <a-entity _app="uri: app/vconsole.js"   ></a-entity>
       <a-entity _app="uri: app/xrfragments.js"></a-entity> 
@@ -60,22 +57,17 @@
       <a-entity _app="uri: app/save.js;     foo: Hello World" position="1 1.25 -1.7"></a-entity>
       <a-entity _app="uri: app/load.js;     foo: Hello World" position="1 1.25 -1.7"></a-entity>
 
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
       <a-entity noxrf gltf-model="#environment"></a-entity>
 
       <a-entity id="player" wasd-controls="acceleration:30" look-controls com="uri: com/control/patch-look-controls.js">
         <a-entity camera="fov:90" position="0 1.6 0 " id="camera" com="uri: com/control/gaze-touch-to-click.js"></a-entity>
-        <a-entity id="left-hand"  hand-tracking-controls="hand:left; modelColor: #cccccc" hand-tracking-grab-controls="hand: left;" laser-controls="hand: left" raycaster="objects:.ray,[html]" blink-controls="cameraRig:#player; teleportOrigin: #camera; collisionEntities: #floor">
+        <a-entity id="left-hand"  hand-tracking-grab-controls="hand: left; modelColor: #cccccc" laser-controls="hand: left" raycaster="objects:.ray,[html]" blink-controls="cameraRig:#player; teleportOrigin: #camera; collisionEntities: #floor">
           <a-entity rotation="-35 0 0" position="0 0.1 0" id="navigator">
             <a-entity id="back" xrf-button="label: <; width:0.05; action: history.back()"    position="-0.025 0 0" class="ray"></a-entity>
             <a-entity id="next" xrf-button="label: >; width:0.05; action: history.forward()" position=" 0.025 0 0" class="ray"></a-entity>
           </a-entity>
         </a-entity>
-        <a-entity id="right-hand" hand-tracking-controls="hand:right; modelColor: #EEEEEE"
-                                  hand-tracking-grab-controls="hand: right;"
+        <a-entity id="right-hand" hand-tracking-grab-controls="hand: right; modelColor: #EEEEEE"
                                   laser-controls="hand: right"
                                   raycaster="objects:.ray,[html]"
                                   blink-controls="cameraRig:#player; teleportOrigin: #camera; collisionEntities: #floor"
