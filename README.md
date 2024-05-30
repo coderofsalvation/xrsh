@@ -19,7 +19,7 @@ See [the wiki here](https://forgejo.isvery.ninja/xrsh/xrsh/wiki/Home#milestones)
 
 ## Developers 
 
-Make sure to clone the repo including submodules (the [xrsh-com](https://forgejo.isvery.ninja/xrsh-com) repo)
+Make sure to clone the repo including submodules (the [xrsh-com](https://forgejo.isvery.ninja/xrsh/xrsh-com) repo)
 
 ```
 $ git clone --recurse-submodules https://forgejo.isvery.ninja/xrsh/xrsh
