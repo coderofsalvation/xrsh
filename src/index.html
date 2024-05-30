@@ -9,14 +9,12 @@
     <script src="com/require.js"></script>
     <script src="com/launcher.js"></script>
 
-    <!-- launchable dom/aframe items -->
-    <script src="com/xd.js"></script>
-    <script src="com/xrfragments.js"></script>
-    <script src="com/paste.js"></script>
-    <script src="com/save.js"></script>
+    <!-- some launchable dom/aframe items for the menu -->
+    <script src="com/add.js"></script>
+    <script src="com/cast.js"></script>
     <script src="com/example/helloworld.js"></script>
     <script src="com/example/helloworld-window.js"></script>
-    <script src="com/example/helloworld-iframe.js"></script>
+    <script src="com/xd.js"></script>
 
   </head>
   <body bgcolor="white">
@@ -36,32 +34,13 @@
 
       <a-entity launcher="attach: #left-hand; fingerTip: #right-hand;" dom position="-0.017 -0.094 -0.085" rotation="133.19 -24.75 -203.1"></a-entity>
 
-      <a-entity paste></a-entity>
-      <a-entity save></a-entity>
+      <a-entity add="comps: paste,save,xrfragments,example/helloworld-iframe,example/helloworld-htmlform,example/helloworld-window"></a-entity>
+      <a-entity cast></a-entity>
       <a-entity helloworld></a-entity>
-      <a-entity helloworld-window xd></a-entity>
-      <a-entity helloworld-iframe xd></a-entity>
-      <a-entity xrfragments></a-entity>
+      <a-entity helloworld-window></a-entity>
       <a-entity xd></a-entity>
 
-      <a-entity _app="uri: app/vconsole.js"   ></a-entity>
-      <a-entity _app="uri: app/xrfragments.js"></a-entity> 
-      <a-entity _app="uri: app/aframe-inspector.js; order:-50"></a-entity>
-      <a-entity _app="uri: app/spatialize.js;       order:-100" ></a-entity>
-      <a-entity _app="uri: app/isoterminal.js" position="0 1.25 -2.1"></a-entity>
-      <a-entity _app="uri: app/manual.js;" position="1 1.25 -2.2"></a-entity>
-      <a-entity _app="uri: app/example/helloworld.js;            foo: Hello World" ></a-entity>
-      <a-entity _app="uri: app/example/helloworld-html.js;       foo: Hello World" position="0 2 -1.9"></a-entity>
-      <a-entity _app="uri: app/example/helloworld-htmlform.js;   foo: Hello World" position="0 1.25 -1.8"></a-entity>
-      <a-entity _app="uri: app/example/helloworld-window.js;     foo: Hello World" position="1 1.25 -1.7"></a-entity>
-
-      <a-entity _app="uri: app/example/helloworld-iframe.js;     foo: Hello World" position="1 1.25 -1.7"></a-entity>
-      <a-entity _app="uri: app/paste.js;     foo: Hello World" position="1 1.25 -1.7"></a-entity>
-
-      <a-entity _app="uri: app/save.js;     foo: Hello World" position="1 1.25 -1.7"></a-entity>
-      <a-entity _app="uri: app/load.js;     foo: Hello World" position="1 1.25 -1.7"></a-entity>
-
-      <a-entity noxrf gltf-model="#environment"></a-entity>
+      <a-entity noxrf gltf-model="#environment" hide-on-enter-ar></a-entity>
 
       <a-entity id="player" wasd-controls="acceleration:30" look-controls com="uri: com/control/patch-look-controls.js">
         <a-entity camera="fov:90" position="0 1.6 0 " id="camera" com="uri: com/control/gaze-touch-to-click.js"></a-entity>
