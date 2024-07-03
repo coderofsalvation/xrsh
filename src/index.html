@@ -34,7 +34,7 @@
 
       <a-entity launcher="attach: #left-hand; fingerTip: #right-hand;" dom position="-0.017 -0.094 -0.085" rotation="133.19 -24.75 -203.1"></a-entity>
 
-      <a-entity add="comps: cast,aframestats,paste,save,xrfragments,example/helloworld-iframe,example/helloworld-htmlform,example/helloworld-window"></a-entity>
+      <a-entity add="comps: cast,aframestats,paste,save,xrfragments,example/helloworld-iframe,example/helloworld-htmlform,example/helloworld-window,look-controls-toggle,wasd-controls-toggle"></a-entity>
       <a-entity isoterminal launch></a-entity>
       <a-entity helloworld></a-entity>
       <a-entity helloworld-window></a-entity>
@@ -42,7 +42,7 @@
 
       <a-entity noxrf gltf-model="#environment" hide-on-enter-ar></a-entity>
 
-      <a-entity id="player" wasd-controls="acceleration:30" look-controls com="uri: com/control/patch-look-controls.js">
+      <a-entity id="player" >
         <a-entity camera="fov:90" position="0 1.6 0 " id="camera" com="uri: com/control/gaze-touch-to-click.js"></a-entity>
         <a-entity id="left-hand"  hand-tracking-grab-controls="hand: left; modelColor: #cccccc" laser-controls="hand: left" raycaster="objects:.ray,[html]" blink-controls="cameraRig:#player; teleportOrigin: #camera; collisionEntities: #floor">
           <a-entity rotation="-35 0 0" position="0 0.1 0" id="navigator">
