@@ -22,9 +22,7 @@ See [the wiki here](https://forgejo.isvery.ninja/xrsh/xrsh/wiki/Home#milestones)
 Make sure to clone the repo including submodules (the [xrsh-com](https://forgejo.isvery.ninja/xrsh/xrsh-com) repo)
 
 ```
-$ git clone https://forgejo.isvery.ninja/xrsh/xrsh
-$ cd xrsh/src
-$ git clone https://orgejo.isvery.ninja/xrsh/xrsh-com.git
+$ git clone --recurse-submodules https://forgejo.isvery.ninja/xrsh/xrsh
 ```
 
 > Now serve the repo from a HTTPS webserver (for example run `./make dev`)
