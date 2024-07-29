@@ -7,18 +7,21 @@
     <link rel="stylesheet" href="./index.css"></link>
     <script src="./assets/aframe.min.js"></script>
     <script src="com/require.js"></script>
+    <script src="com/selfcontainer.js"></script>
     <script src="com/launcher.js"></script>
 
     <!-- some launchable dom/aframe items for the menu -->
+    <script src="com/xd.js"></script>
     <script src="com/launcher-optional.js"></script>
     <script src="com/isoterminal.js"></script>
     <script src="com/example/helloworld.js"></script>
     <script src="com/example/helloworld-window.js"></script>
-    <script src="com/xd.js"></script>
+    <script src="com/save.js"></script>
 
   </head>
   <body bgcolor="white">
-    <a-scene light="defaultLightsEnabled: true"
+    <a-scene selfcontainer
+             light="defaultLightsEnabled: true"
              cursor="rayOrigin: mouse"
              renderer="colorManagement: false; antialias:true; highRefreshRate:true; foveationLevel: 0.5; toneMapping: linear; exposure: 1.3"
              xr-mode-ui="XRMode: ar"
@@ -38,7 +41,7 @@
       <a-entity isoterminal launch></a-entity>
       <a-entity helloworld></a-entity>
       <a-entity helloworld-window></a-entity>
-      <a-entity xd></a-entity>
+      <a-entity save></a-entity>
 
       <a-entity noxrf gltf-model="#environment" hide-on-enter-ar></a-entity>
 
