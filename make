@@ -12,19 +12,18 @@ install(){
     wget "$REDBEAN_VERSION" -O ${APP}.com
     chmod +x ${APP}.com
   }
-  standalone
 }
 
 standalone(){
+  rm ${APP}.com || true
   test -f ${APP}.com || install
-  cd src
   set -x
-  zip -x "*.git*" -r ../${APP}.com *
-  ls -lah ../${APP}.com
+  zip -x "*.git*" -r ${APP}.com index.html LICENSE src/index.{html,css} src/assets src/com/*.js src/com/isoterminal/{xrsh.iso,libv86.js,bios,v86.wasm}
+  sha256sum ${APP}.com > ${APP}.txt
+  ls -lah ${APP}.com
 }
 
 dev(){
-  test -d src/xrsh-apps || git submodule update --init --recursive 
   cd /tmp
   test -f redbean.com || wget "$REDBEAN_VERSION" -O redbean.com && chmod 755 redbean.com
   test -f cert.pem    || openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem
