@@ -16,4 +16,12 @@
       zip
 
     ];
+
+    shellHook =
+      ''
+        echo '[🔥] dependencies ready'
+        ./make standalone
+        echo '[🔥] bundled executable: xrsh.com'
+        echo -e "\n run: ./xrsh.com to launch XR Shell\n\n"
+      '';
 }
