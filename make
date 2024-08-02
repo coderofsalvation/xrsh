@@ -24,12 +24,10 @@ standalone(){
 }
 
 dev(){
-  cd /tmp
-  test -f redbean.com || wget "$REDBEAN_VERSION" -O redbean.com && chmod 755 redbean.com
-  test -f cert.pem    || openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem
-  cd -
   cd "$DIR"
-  /tmp/redbean.com -c 0 -C /tmp/cert.pem -K /tmp/key.pem -D . "$@"
+  test -f xrsh.com || standalone
+  test -f cert.pem || openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout /tmp/key.pem -out /tmp/cert.pem
+  ./xrsh.com -c 0 -C /tmp/cert.pem -K /tmp/key.pem -D . "$@"
 }
 
 test -z $1 && install
