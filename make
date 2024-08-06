@@ -26,7 +26,7 @@ standalone(){
 dev(){
   cd "$DIR"
   test -f xrsh.com || standalone
-  test -f cert.pem || openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout /tmp/key.pem -out /tmp/cert.pem
+  test -f /tmp/cert.pem || openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout /tmp/key.pem -out /tmp/cert.pem
   ./xrsh.com -c 0 -C /tmp/cert.pem -K /tmp/key.pem -D . "$@"
 }
 
