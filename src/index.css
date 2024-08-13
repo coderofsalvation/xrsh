@@ -8,7 +8,7 @@
  */
 
 :root {
-  --xrsh-primary: #3aacff;
+  --xrsh-primary: #3a51ff;
   --xrsh-primary-fg: #FFF;
   --xrsh-light-primary: #00a3Ff;
   --xrsh-secondary: #872eff;
@@ -110,7 +110,7 @@ button,input,.btn{
   background: var(--xrsh-light-primary); 
   font-weight: bold;
   border-radius: var(--xrsh-window-radius) var(--xrsh-window-radius) 0px 0px;
-  line-height:30px;
+  line-height:36px;
 }
 .winbox.max .wb-header{
   border-radius:0px;
