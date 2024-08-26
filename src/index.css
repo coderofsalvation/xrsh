@@ -107,7 +107,8 @@ button,input,.btn{
   border: 1px solid #FFF3;
 }
 .winbox .wb-header{ 
-  background: var(--xrsh-light-primary); 
+  background:transparent !important;
+  z-index:1000;
   font-weight: bold;
   border-radius: var(--xrsh-window-radius) var(--xrsh-window-radius) 0px 0px;
   line-height:36px;
@@ -115,8 +116,15 @@ button,input,.btn{
 .winbox.max .wb-header{
   border-radius:0px;
 }
+.winbox .wb-body{
+  top:0px;
+  padding-top:25px;
+}
 .winbox .wb-control{
   height:29px;
+}
+.winbox .wb-drag{
+  padding-left:19px;
 }
 .winbox .wb-control > span{
   background-size: 12px auto !important;

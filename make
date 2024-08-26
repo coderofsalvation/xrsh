@@ -30,5 +30,14 @@ dev(){
   ./xrsh.com -c 0 -C /tmp/cert.pem -K /tmp/key.pem -D . "$@"
 }
 
+shell(){
+  OCI=$(which podman || which docker)
+  set -x
+  $OCI rm -f xrsh || true
+  $OCI run --name xrsh -d \
+    -v ./src/com/isoterminal/mnt:/mnt busybox:1.31.1-musl tail -f /dev/null
+  $OCI exec -it xrsh /bin/sh -i -c 'source /mnt/profile && sh'
+}
+
 test -z $1 && install
 test -z $1 || "$@"
