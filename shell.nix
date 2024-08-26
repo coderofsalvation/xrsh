@@ -14,6 +14,8 @@
       nodejs_20
       cosmopolitan
       zip
+      vhs
+      ffmpeg_6-full
 
     ];
 

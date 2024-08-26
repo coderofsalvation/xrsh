@@ -39,5 +39,12 @@ shell(){
   $OCI exec -it xrsh /bin/sh -i -c 'source /mnt/profile && sh'
 }
 
+recordings(){
+  export PATH=$PATH:src/com/isoterminal/mnt
+  export BROWSER=0
+  test -z $1 && find src/tests/vhs/* | xargs -n1 vhs 
+  test -z $1 || vhs $1
+}
+
 test -z $1 && install
 test -z $1 || "$@"
