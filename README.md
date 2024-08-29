@@ -27,4 +27,6 @@ $ git clone --recurse-submodules https://forgejo.isvery.ninja/xrsh/xrsh
 
 > Now serve the repo from a HTTPS webserver (for example run `./make dev`)
 
+Run `./make standalone` to package everything into `xrsh.com`
+
 

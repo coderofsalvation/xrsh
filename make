@@ -18,7 +18,7 @@ standalone(){
   rm ${APP}.com || true
   test -f ${APP}.com || install
   set -x
-  zip -x "*.git*" -r ${APP}.com index.html LICENSE src/index.{html,css} src/assets src/com/*.js src/com/isoterminal/{xrsh.iso,libv86.js,bios,v86.wasm}
+  zip -x "*.git*" -r ${APP}.com index.html LICENSE src/index.{html,css} src/assets src/com/*.js src/com/isoterminal/{xrsh.iso,libv86.js,bios,v86.wasm,mnt,images/buildroot-bzimage.bin}
   sha256sum ${APP}.com > ${APP}.txt
   ls -lah ${APP}.com
 }
@@ -36,7 +36,7 @@ shell(){
   $OCI rm -f xrsh || true
   $OCI run --name xrsh -d \
     -v ./src/com/isoterminal/mnt:/mnt busybox:1.31.1-musl tail -f /dev/null
-  $OCI exec -it xrsh /bin/sh -i -c 'source /mnt/profile && sh'
+  $OCI exec -it xrsh /bin/sh -i -c 'ln -s /mnt/profile /etc/profile && sh --login'
 }
 
 recordings(){
