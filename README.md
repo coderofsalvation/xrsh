@@ -29,4 +29,3 @@ $ git clone --recurse-submodules https://forgejo.isvery.ninja/xrsh/xrsh
 
 Run `./make standalone` to package everything into `xrsh.com`
 
-
