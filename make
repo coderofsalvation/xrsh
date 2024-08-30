@@ -47,10 +47,6 @@ recordings(){ # compile vhs recordings
   test -z $1 || vhs $1
 }
 
-deploy(){ # deploy to server(s)
-  
-}
-
 usage(){
   echo "Usage:"
   awk '/\(\){ #/ { gsub(/\(\){ #/," <----",$0); print "  ./make "$0 }' $0 
