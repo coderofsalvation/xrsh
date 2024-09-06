@@ -6,16 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="./index.css"></link>
     <script src="./assets/aframe.min.js"></script>
+
     <script src="com/require.js"></script>
-
-    <!-- allow xrsh to selfcontain itself --> 
-    <script src="https://jpillora.com/xhook/dist/xhook.min.js"></script>
-    <script src="com/selfcontainer.js"></script>
-
-    <script src="com/launcher.js"></script>
-    <script src="com/launcher-optional.js"></script>
     <script src="com/isoterminal.js"></script>
-    <script src="com/save.js"></script>
 
   </head>
   <body bgcolor="white">
@@ -27,6 +20,7 @@
              obb-collider="showColliders:false"
              raycaster="objects: [html]; interval:100;">
 
+      <!--
       <a-assets timeout="1000">
         <a-asset-item id="environment" src="https://coderofsalvation.github.io/xrsh-media/assets/background.glb"></a-asset-item>
         <a-mixin id="menuitem"   geometry="primitive: plane; width: 0.15; height: 0.15; depth: 0.02" obb-collider="size: 0.03 0.03 0.03" ></a-mixin>
@@ -40,10 +34,11 @@
       
       <a-entity launcher="attach: #left-hand; fingerTip: #right-hand;" dom position="-0.017 -0.094 -0.085" rotation="133.19 -24.75 -203.1"></a-entity>
       <a-entity launcher-optional="comps: cast,aframestats,paste,save,xrfragments,example/helloworld-iframe,example/helloworld-htmlform,example/helloworld-window,look-controls-toggle,wasd-controls-toggle"></a-entity>
-
-      <a-entity isoterminal launch iso="com/isoterminal/images/buildroot-bzimage.bin"></a-entity>
-
       <a-entity noxrf gltf-model="#environment" hide-on-enter-ar></a-entity>
+      -->
+
+      <a-entity isoterminal iso="com/isoterminal/images/buildroot-bzimage.bin"></a-entity>
+
 
       <a-entity id="player" >
         <a-entity camera="fov:90" position="0 1.6 0 " id="camera" com="uri: com/control/gaze-touch-to-click.js"></a-entity>
