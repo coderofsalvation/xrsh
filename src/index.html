@@ -13,12 +13,8 @@
     <script src="com/selfcontainer.js"></script>
 
     <script src="com/launcher.js"></script>
-    <!-- some launchable dom/aframe items for the menu -->
-    <script src="com/xd.js"></script>
     <script src="com/launcher-optional.js"></script>
     <script src="com/isoterminal.js"></script>
-    <script src="com/example/helloworld.js"></script>
-    <script src="com/example/helloworld-window.js"></script>
     <script src="com/save.js"></script>
 
   </head>
@@ -38,13 +34,14 @@
                                  obb-collider="size: 0.03 0.03 0.03" position="-0.003 -0.027 -0.077" rotation="94.53 -6.35 -59.0"></a-mixin>
       </a-assets>
 
-      <a-entity launcher="attach: #left-hand; fingerTip: #right-hand;" dom position="-0.017 -0.094 -0.085" rotation="133.19 -24.75 -203.1"></a-entity>
-
-      <a-entity launcher-optional="comps: cast,aframestats,paste,save,xrfragments,example/helloworld-iframe,example/helloworld-htmlform,example/helloworld-window,look-controls-toggle,wasd-controls-toggle"></a-entity>
-      <a-entity isoterminal launch iso="com/isoterminal/images/buildroot-bzimage.bin"></a-entity>
       <a-entity helloworld></a-entity>
       <a-entity helloworld-window></a-entity>
       <a-entity save></a-entity>
+      
+      <a-entity launcher="attach: #left-hand; fingerTip: #right-hand;" dom position="-0.017 -0.094 -0.085" rotation="133.19 -24.75 -203.1"></a-entity>
+      <a-entity launcher-optional="comps: cast,aframestats,paste,save,xrfragments,example/helloworld-iframe,example/helloworld-htmlform,example/helloworld-window,look-controls-toggle,wasd-controls-toggle"></a-entity>
+
+      <a-entity isoterminal launch iso="com/isoterminal/images/buildroot-bzimage.bin"></a-entity>
 
       <a-entity noxrf gltf-model="#environment" hide-on-enter-ar></a-entity>
 
