@@ -11,7 +11,7 @@
     <script src="com/isoterminal.js"></script>
 
   </head>
-  <body bgcolor="white">
+  <body style="background:linear-gradient( 45deg, #324, #8c74ff)">
     <a-scene selfcontainer
              light="defaultLightsEnabled: true"
              cursor="rayOrigin: mouse"
@@ -36,8 +36,7 @@
       <a-entity launcher-optional="comps: cast,aframestats,paste,save,xrfragments,example/helloworld-iframe,example/helloworld-htmlform,example/helloworld-window,look-controls-toggle,wasd-controls-toggle"></a-entity>
       <a-entity noxrf gltf-model="#environment" hide-on-enter-ar></a-entity>
       -->
-
-      <a-entity isoterminal iso="com/isoterminal/images/buildroot-bzimage.bin"></a-entity>
+      <a-entity isoterminal="iso: ./../xrsh.iso"></a-entity>
 
 
       <a-entity id="player" >
