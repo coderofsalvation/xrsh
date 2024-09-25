@@ -41,13 +41,13 @@
 
       <a-entity id="player" >
         <a-entity camera="fov:90" position="0 1.6 0 " id="camera" com="uri: com/control/gaze-touch-to-click.js"></a-entity>
-        <a-entity id="left-hand"  hand-tracking-grab-controls="hand: left; modelColor: #cccccc" laser-controls="hand: left" raycaster="objects:.ray,[html]" blink-controls="cameraRig:#player; teleportOrigin: #camera; collisionEntities: #floor">
+        <a-entity id="left-hand"  hand-tracking-grab-controls="hand: left; modelColor: #cccccc; hoverEnabled:true" laser-controls="hand: left" raycaster="objects:.ray,[html]" blink-controls="cameraRig:#player; teleportOrigin: #camera; collisionEntities: #floor">
           <a-entity rotation="-35 0 0" position="0 0.1 0" id="navigator">
             <a-entity id="back" xrf-button="label: <; width:0.05; action: history.back()"    position="-0.025 0 0" class="ray"></a-entity>
             <a-entity id="next" xrf-button="label: >; width:0.05; action: history.forward()" position=" 0.025 0 0" class="ray"></a-entity>
           </a-entity>
         </a-entity>
-        <a-entity id="right-hand" hand-tracking-grab-controls="hand: right; modelColor: #EEEEEE"
+        <a-entity id="right-hand" hand-tracking-grab-controls="hand: right; modelColor: #EEEEEE; hoverEnabled:true"
                                   laser-controls="hand: right"
                                   raycaster="objects:.ray,[html]"
                                   blink-controls="cameraRig:#player; teleportOrigin: #camera; collisionEntities: #floor"
