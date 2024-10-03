@@ -1,5 +1,5 @@
 #!/bin/sh
-REDBEAN_VERSION=https://redbean.dev/redbean-2.2.com
+REDBEAN_VERSION=https://redbean.dev/redbean-3.0.0.com
 APP=xrsh
 DIR=$(dirname $(readlink -f $0))
 
@@ -17,10 +17,10 @@ deps(){ # check dependencies
 standalone(){ # build standalone xrsh.com binary
   rm ${APP}.com || true
   deps
-  cp index.html /tmp/index.html
-  sed -i 's|isoterminal=".*"|isoterminal="iso: ./../xrsh.iso"|g' index.html
+  #cp index.html /tmp/index.html
+  #sed -i 's|isoterminal=".*"|isoterminal="iso: ./../xrsh.iso"|g' index.html
   zip -x "*.git*" -r ${APP}.com index.html xrsh.iso .args LICENSE src/index.{html,css} src/assets src/com/*.js src/com/isoterminal/{libv86.js,bios,v86.wasm,feat,core.js}
-  cp /tmp/index.html index.html
+  #cp /tmp/index.html index.html
   sha256sum ${APP}.com > ${APP}.txt
   ls -lah ${APP}.com
 }
