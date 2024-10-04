@@ -130,7 +130,8 @@ button,input,.btn{
   background-size: 12px auto !important;
 }
 
-.winbox .wb-full{
+.winbox .wb-full,
+.winbox .wb-max{
   display:none !important;
 }
 .winbox *{  
