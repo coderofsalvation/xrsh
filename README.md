@@ -47,6 +47,9 @@ $ nix-shell  # optional but adviced (to get up and running instantly)
 
 Run `./make standalone` to package everything into `xrsh.com`
 
+* development of components (`src/com`) takes places [in this git submodule](https://forgejo.isvery.ninja/xrsh/xrsh-com)
+* development of `xrsh.iso` takes places [in this gitsubmodule](https://forgejo.isvery.ninja/xrsh/xrsh-buildroot)
+
 
 ## Funding
 
