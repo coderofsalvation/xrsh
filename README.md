@@ -29,6 +29,19 @@ See [the wiki here](https://forgejo.isvery.ninja/xrsh/xrsh/wiki/Home#milestones)
 5. Profit! ✔
 </details>
 
+<details>
+    <summary>launch different .iso / modify files</summary>
+
+You can specify a different `.iso` file in various ways:
+
+1. open the `xrsh.com` as a zip (drag-drop into a zip-manager, or add `.zip` extension) 
+2. method 1: overwrite `xrsh.iso`
+3. method 2: open `src/index.html` and change `isoterminal="iso: ./../xrsh.iso"` to another file/URL
+
+> see developer-section below on building your own iso
+
+</details>
+
 The browser auto-launches `https://localhost:8080` on most platforms
 
 > pass `-p XXXX` to specify port (default:8080)
