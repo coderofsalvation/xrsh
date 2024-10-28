@@ -15,14 +15,18 @@ deps(){ # check dependencies
 }
 
 standalone(){ # build standalone xrsh.com binary
-  rm ${APP}.com || true
-  deps
+  FILE=${APP}.com
+  test -z "$1" && {
+    rm ${APP}.com || true
+    deps
+  }
+  test -n "$1" && FILE="$1"
   #cp index.html /tmp/index.html
   #sed -i 's|isoterminal=".*"|isoterminal="iso: ./../xrsh.iso"|g' index.html
-  zip -x "*.git*" -r ${APP}.com index.html xrsh.iso .args LICENSE src/index.{html,css} src/assets src/com/*.js src/com/isoterminal/{libv86.js,bios,v86.wasm,feat,core.js}
+  zip -x "*.git*" -r "$FILE" index.html xrsh.iso .args LICENSE src/index.{html,css} src/assets src/com/*.js src/com/isoterminal/{libv86.js,bios,v86.wasm,feat,core.js,PromiseWorker.js,ISOTerminal.js,localforage.js,VT100.js,assets,worker.js}
   #cp /tmp/index.html index.html
-  sha256sum ${APP}.com > ${APP}.txt
-  ls -lah ${APP}.com
+  sha256sum ${APP}.com > "$FILE".txt
+  ls -lah "$FILE"
 }
 
 dev(){ # start dev http server

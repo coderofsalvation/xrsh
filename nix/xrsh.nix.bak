@@ -1,0 +1,25 @@
+{ stdenv, fetchurl }:
+
+stdenv.mkDerivation rec {
+  pname = "xrsh";
+  version = "0.1";
+
+  src = fetchurl {
+    url = "https://codeberg.org/xrsh/xrsh/archive/24e117f5125e4b2ecd7432baf6fdd5f60e6b3a70.tar.gz";
+    sha256 = "11v22pijnjm3mb3n8dki4m95rc73azschfwvh2c1pc3bxrfsk0k8";
+  };
+
+  #cosmopolitan = pkgs.callPackage pkgs.cosmopolitan { };
+
+  ## Override derivation to modify buildFlags
+  #redbean = cosmopolitan.overrideDerivation (oldAttrs: {
+  #  buildFlags = oldAttrs.buildFlags ++ ["--enable-feature-x"];
+  #});
+
+  buildInputs = [];
+
+  buildFlags = [];
+
+  # Define phases if needed, e.g., build, install, etc.
+  # phases = [ "buildPhase" "installPhase" ];
+}

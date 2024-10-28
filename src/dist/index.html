@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>xrsh</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <script src="/index.443d2602.js"></script>
+    <script src="/index.c2bf9ea7.js"></script> 
+    
+   
+    <!-- user app extensions -->
+    <!-- <script>AFRAME.components['helloworld'].Component.prototype.dependencies["https://acme.com/myExtension.js"]</script> -->
+
+  </head>
+  <body>
+    <a-scene webxr="overlayElement:#-overlay;" light="defaultLightsEnabled: true" cursor="rayOrigin: mouse" raycaster="objects: [html]; interval:100;">
+
+      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+
+      <a-entity position="    0 1.5 -1" app="uri: app/helloworld.js; foo: bar"></a-entity>
+      <a-entity position="    0 1.5 -1" app="uri: app/manual.js; foo: bar"></a-entity>
+      <a-entity app="uri: app/apptiler.js; foo: bar"></a-entity>
+
+      <a-entity id="player" wasd-controls="" look-controls="">
+        <a-entity id="left-hand" laser-controls="hand: left" raycaster="objects:.ray" blink-controls="cameraRig:#player; teleportOrigin: #camera; collisionEntities: #floor">
+          <a-entity rotation="-35 0 0" position="0 0.1 0" id="navigator"> 
+            <a-entity id="back" xrf-button="label: <; width:0.05; action: history.back()" position="-0.025 0 0" class="ray"></a-entity>
+            <a-entity id="next" xrf-button="label: >; width:0.05; action: history.forward()" position=" 0.025 0 0" class="ray"></a-entity>
+          </a-entity>
+        </a-entity>
+        <a-entity id="right-hand" laser-controls="hand: right" raycaster="objects:.ray" blink-controls="cameraRig:#player; teleportOrigin: #camera; collisionEntities: #floor"></a-entity>
+        <a-entity camera="fov:90" position="0 1.6 0" id="camera"></a-entity>
+      </a-entity>
+
+      <!-- addressible & navigatable worlds -->
+      <a-entity xrf=""></a-entity>
+
+    </a-scene>
+
+  <script src="/xrsh.3464ddca.js"></script></body>
+</html>
