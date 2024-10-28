@@ -8,24 +8,27 @@ See [the wiki here](https://forgejo.isvery.ninja/xrsh/xrsh/wiki/Home#milestones)
 
 ## Install 
 
-> NOTE: installation not needed, just surf to the public version [here](https://coderofsalvation.github.io/xrsh)
+> NOTE: installation is optional: just surf to the public version [here](https://coderofsalvation.github.io/xrsh)
 
+<details>
+<summary>install using nix</summary>
+
+1. run `nix-run -p xrsh --run "xrsh.com"` (pass `-p XXXX` to specify non-default 8080 port )
+2. build it when package does not exist: `nix-build -E "with import <nixpkgs> { }; callPackage ./xrsh.nix"`
+</details>
+
+<details>
+    <summary>install without nix</summary>
 1. Download [xrsh.com](https://forgejo.isvery.ninja/xrsh/xrsh/raw/branch/main/xrsh.com)
 2. optional: run `unzip xrsh.com` to verify repository contents
 3. run `chmod +x xrsh.com` in your console 
 4. run `./xrsh.com` 
 5. Profit! ✔
+</details>
 
 The browser auto-launches `https://localhost:8080` on most platforms
 
 > pass `-p XXXX` to specify port (default:8080)
-
-<details>
-<summary>Nix-users</summary>
-
-1. run `nix-run -p xrsh --run "xrsh.com"` (pass `-p XXXX` to specify non-default 8080 port )
-2. build it when package does not exist: `nix-build -E "with import <nixpkgs> { }; callPackage ./xrsh.nix"`
-</details>
 
 ## Developers 
 
