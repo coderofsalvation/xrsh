@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 REDBEAN_VERSION=https://redbean.dev/redbean-3.0.0.com
 APP=xrsh
 DIR=$(dirname $(readlink -f $0))
@@ -25,7 +25,7 @@ standalone(){ # build standalone xrsh.com binary
   #sed -i 's|isoterminal=".*"|isoterminal="iso: ./../xrsh.iso"|g' index.html
   zip -x "*.git*" -r "$FILE" index.html xrsh.iso .args LICENSE src/index.{html,css} src/assets src/com/*.js src/com/isoterminal/{libv86.js,bios,v86.wasm,feat,core.js,PromiseWorker.js,ISOTerminal.js,localforage.js,VT100.js,assets,worker.js}
   #cp /tmp/index.html index.html
-  sha256sum ${APP}.com > "$FILE".txt
+  sha256sum "$FILE".com > "$FILE".txt
   ls -lah "$FILE"
 }
 
