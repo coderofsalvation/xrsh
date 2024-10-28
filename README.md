@@ -13,16 +13,19 @@ See [the wiki here](https://forgejo.isvery.ninja/xrsh/xrsh/wiki/Home#milestones)
 <details>
 <summary>install using nix</summary>
 
+[NIX](https://nixos.org/) is a convenient way to install or develop xrsh:
+
 1. run `nix-run -p xrsh --run "xrsh.com"` (pass `-p XXXX` to specify non-default 8080 port )
 2. build it when package does not exist: `nix-build -E "with import <nixpkgs> { }; callPackage ./xrsh.nix"`
 </details>
 
 <details>
     <summary>install without nix</summary>
+
 1. Download [xrsh.com](https://forgejo.isvery.ninja/xrsh/xrsh/raw/branch/main/xrsh.com)
 2. optional: run `unzip xrsh.com` to verify repository contents
-3. run `chmod +x xrsh.com` in your console 
-4. run `./xrsh.com` 
+3. run `chmod +x xrsh.com` in your console (only linux/mac)
+4. run `./xrsh.com` in (any) shell
 5. Profit! ✔
 </details>
 
@@ -36,6 +39,8 @@ Make sure to clone the repo including submodules (the [xrsh-com](https://forgejo
 
 ```
 $ git clone --recurse-submodules https://forgejo.isvery.ninja/xrsh/xrsh
+$ cd xrsh
+$ nix-shell  # optional but adviced (to get up and running instantly)
 ```
 
 > Now serve the repo from a HTTPS webserver (for example run `./make dev`)
