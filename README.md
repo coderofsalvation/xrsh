@@ -8,7 +8,7 @@ See [the wiki here](https://forgejo.isvery.ninja/xrsh/xrsh/wiki/Home#milestones)
 
 ## Install 
 
-> NOTE: installation is optional: just surf to the public version [here](https://coderofsalvation.github.io/xrsh)
+> NOTE: installation is optional: just surf to the public version [here](https://xrsh.isvery.ninja)
 
 <details>
 <summary>install using nix</summary>
