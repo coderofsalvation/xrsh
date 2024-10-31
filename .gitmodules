@@ -3,6 +3,3 @@
 	url = https://forgejo.isvery.ninja/xrsh/xrsh-com.git
   #url = ssh://git@forgejo.isvery.ninja:8222/xrsh/xrsh-com.git
 
-[submodule "src/xrsh-buildroot"]
-	path = src/xrsh-buildroot
-	url = ssh://git@forgejo.isvery.ninja:8222/xrsh/xrsh-buildroot.git
