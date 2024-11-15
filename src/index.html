@@ -39,7 +39,7 @@
       <a-entity isoterminal="iso: ./../xrsh.iso" position="0 1.6 -0.3"></a-entity>
 
       <a-entity id="player" >
-        <a-entity camera="fov:90" position="0 1.6 0 " id="camera" com="uri: com/control/gaze-touch-to-click.js"></a-entity>
+        <a-entity camera="fov:90" position="0 1.6 0" id="camera" wasd-controls com="uri: com/control/gaze-touch-to-click.js"></a-entity>
         <a-entity id="left-hand"  hand-tracking-grab-controls="hand: left; modelColor: #cccccc; hoverEnabled:true" laser-controls="hand: left" raycaster="objects:.ray,[html]" blink-controls="cameraRig:#player; teleportOrigin: #camera; collisionEntities: #floor">
           <a-entity rotation="-35 0 0" position="0 0.1 0" id="navigator">
             <a-entity id="back" xrf-button="label: <; width:0.05; action: history.back()"    position="-0.025 0 0" class="ray"></a-entity>

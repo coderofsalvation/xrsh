@@ -3,7 +3,7 @@ convert = ISOTerminal.prototype.convert
 
 console.test("com/isoterminal/ISOTerminal.js", async () => {
 
-  term.worker['emulator.read_file']("root/.profile")
+  term.worker.read_file("root/.profile")
   .then( (res) => {
     try{
       let data = convert.Uint8ArrayToString( res )
@@ -19,15 +19,15 @@ console.test("com/isoterminal/ISOTerminal.js", async () => {
 
 console.test("com/isoterminal/ISOTerminal.js", async () => {
 
-  term.worker['emulator.create_file']("foo", convert.toUint8Array("hello") )
+  term.worker.create_file("foo", convert.toUint8Array("hello") )
   .then( (res) => {
-    term.worker['emulator.read_file']("foo")
+    term.worker.read_file("foo")
     .then( (res) => {
       try{
         let data = convert.Uint8ArrayToString( res )
-        console.assert( data == "hello", "emulator.create_file")
+        console.assert( data == "hello", "worker.create_file")
       }catch(e){
-        console.assert( false, "emulator.create_file")
+        console.assert( false, "worker.create_file")
       }
     })
   })

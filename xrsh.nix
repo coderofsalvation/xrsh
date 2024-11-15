@@ -1,37 +1,25 @@
-{ lib, stdenv, fetchgit, cosmopolitan }:
+{ lib, stdenv, fetchgit, cosmopolitan, zip, bash }:
 
 stdenv.mkDerivation rec {
   pname = "xrsh";
-  version = "0.2";
+  version = "0.142";
 
   src = cosmopolitan.src;
 
-  inherit (cosmopolitan) nativeBuildInputs buildInputs patches strictDeps cosmocc;
+  inherit (cosmopolitan) buildInputs patches strictDeps cosmocc;
+
+  nativeBuildInputs = [ zip bash ] ++ cosmopolitan.nativeBuildInputs; # expose zip during build (./make needs it)
 
   outputs = ["out"];
 
-#  xrsh = fetchzip {
-#    url = "https://codeberg.org/xrsh/xrsh/archive/24e117f5125e4b2ecd7432baf6fdd5f60e6b3a70.tar.gz";
-#    sha256 = "1x0h5krz90y8ngrzgbpjd6xdr171y54p3lqwyirq8j6ilzlq5d5i";
-#  };
-#
-#  xrshcom = fetchzip {
-#    url = "https://codeberg.org/xrsh/xrsh-com/archive/c668a8ba8f65c3d36e3a4da5ea8b87af5eb6091c.tar.gz";
-#    sha256 = "0mpl7h4fxg5i4lxw5447pqr12rsffcf24xdrqwqzr1zzpkdkslks";
-#  };
-
   xrsh = fetchgit {
     url = "https://codeberg.org/xrsh/xrsh";
-    rev = "4330037206add994093c46eb5443fffd6f6221ce";
-    hash = "sha256-igvhSR+n25iHfgHBUniStdVANtrIVHmKpY3LCEIYsx4=";
+    rev = "2a98ab1027de6f23f007a1c793784ca5200a0022";
+    hash = "sha256-ARs6cIBXHyDEooYV4Xsdn201whuPxJTwof81Z8zr4NU=";
     fetchSubmodules = true;
   };
 
   buildFlags = cosmopolitan.buildFlags ++ [ "o//tool/net/redbean.com" ];
-
-  #buildPhase = '' 
-  #  make o//tool/net/redbean.com
-  #'';
 
   dontUnpack = false;
   dontBuild = false;
@@ -46,7 +34,8 @@ stdenv.mkDerivation rec {
     chmod +x $out/bin/xrsh.com 
   
     cd $xrsh
-    ./make standalone $out/bin/xrsh.com
+    find
+    bash ./make standalone $out/bin/xrsh.com
 
   '';
 
