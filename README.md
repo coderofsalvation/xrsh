@@ -2,6 +2,12 @@
 
 <img src='src/assets/logo.svg' width="25%"/>
 
+## XRSH Manual 
+
+Documentation for XRSH users can be found [here](https://forgejo.isvery.ninja/xrsh/xrsh-buildroot/src/branch/main/buildroot-v86/board/v86/rootfs_overlay/root/manual.md)
+
+> TIP: this is also available by typing `ctrl/cmd+a+0` or `man xrsh` inside XRSH
+
 ## Wiki / Roadmap
 
 See [the wiki here](https://forgejo.isvery.ninja/xrsh/xrsh/wiki/Home#milestones)
