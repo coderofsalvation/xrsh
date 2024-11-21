@@ -1,6 +1,6 @@
 # xrsh
 
-<img src='src/assets/logo.svg' width="25%"/>
+<img src='xrsh.svg' width="25%"/>
 
 ## XRSH Manual 
 
