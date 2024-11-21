@@ -2,6 +2,8 @@
 
 <img src='xrsh.svg' width="25%"/>
 
+## [click here for the website / hosted repo](https://xrsh.isvery.ninja)
+
 ## XRSH Manual 
 
 Documentation for XRSH users can be found [here](https://forgejo.isvery.ninja/xrsh/xrsh-buildroot/src/branch/main/buildroot-v86/board/v86/rootfs_overlay/root/manual.md)
