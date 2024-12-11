@@ -81,4 +81,4 @@ This project is funded through [NGI0 Entrust](https://nlnet.nl/entrust), a fund 
 
 ## Inspired by
 
-* [mimetype hooks](https://forgejo.isvery.ninja/xrsh/xrsh-buildroot/src/branch/main/buildroot-v86/board/v86/rootfs_overlay/root/hook.d/mimetype): [Future of Text](https://futureoftext.org) [SLOAN companion]
+* [mimetype hooks](https://forgejo.isvery.ninja/xrsh/xrsh-buildroot/src/branch/main/buildroot-v86/board/v86/rootfs_overlay/root/hook.d/mimetype): [Future of Text's](https://github.com/TheElectronicLiteratureLab/spasca-fsbased-interrop-companion/)
