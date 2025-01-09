@@ -147,6 +147,19 @@ button,input,.btn{
   border: none;  
 }
 
+.winbox .wb-body *::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+.winbox .wb-body *::-webkit-scrollbar-track {
+  background: var(--xrsh-gray);
+  border-left: 9px solid white;
+  border-right: 9px solid white;
+}
+.winbox .wb-body *::-webkit-scrollbar-thumb {
+  background: var(--xrsh-white);
+}
+
 
 /*
  * icons for non-XR (please source from https://css.gg

@@ -21,6 +21,7 @@
 
     shellHook =
       ''
+        export NIX_SHELL_XRSH=1
         echo -e "\n run: './make standalone' to generate binary\n"
         echo -e "\n run: ./xrsh.com to launch XR Shell\n\n"
       '';
