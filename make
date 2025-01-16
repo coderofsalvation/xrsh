@@ -23,7 +23,7 @@ standalone(){ # build standalone xrsh.com binary
   test -n "$1" && FILE="$1"
   #cp index.html /tmp/index.html
   #sed -i 's|isoterminal=".*"|isoterminal="iso: ./../xrsh.iso"|g' index.html
-  zip -x "*.git*" -r "$FILE" index.html xrsh.iso .args LICENSE src/index.{html,css} src/assets src/com/*.js src/com/isoterminal/{libv86.js,bios,v86.wasm,feat,PromiseWorker.js,ISOTerminal.js,localforage.js,VT100.js,assets,worker.js}
+  zip -x "*.git*" -r "$FILE" index.html xrsh.iso .args LICENSE src/index.{html,css} src/assets src/com/*.js src/com/lib src/com/isoterminal/{libv86.js,bios,v86.wasm,feat,PromiseWorker.js,ISOTerminal.js,localforage.js,term.js,assets,worker.js}
   #cp /tmp/index.html index.html
   sha256sum "$FILE" > "$FILE".txt
   ls -lah "$FILE"
