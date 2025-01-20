@@ -19,15 +19,6 @@ See [the wiki here](https://forgejo.isvery.ninja/xrsh/xrsh/wiki/Home#milestones)
 > NOTE: installation is optional: just surf to the public version [here](https://xrsh.isvery.ninja)
 
 <details>
-<summary>install using nix</summary>
-
-[NIX](https://nixos.org/) is a convenient way to install or develop xrsh:
-
-1. run `nix-run -p xrsh --run "xrsh.com"` (pass `-p XXXX` to specify non-default 8080 port )
-2. build it when package does not exist: `nix-build -E "with import <nixpkgs> { }; callPackage ./xrsh.nix"`
-</details>
-
-<details>
     <summary>install without nix</summary>
 
 1. Download [xrsh.com](https://forgejo.isvery.ninja/xrsh/xrsh/raw/branch/main/xrsh.com)
@@ -35,6 +26,23 @@ See [the wiki here](https://forgejo.isvery.ninja/xrsh/xrsh/wiki/Home#milestones)
 3. run `chmod +x xrsh.com` in your console (only linux/mac)
 4. run `./xrsh.com` in (any) shell
 5. Profit! ✔
+</details>
+<details>
+<summary>install using nixos</summary>
+
+[NIX](https://nixos.org/) is a convenient way to install or develop xrsh:
+
+1. `nix-shell -p xrsh thttpd`
+2. `thttpd -p 8080 -d /nix/store/5q4vd50gmh52jh48z62ln1j05xzfh1fz-xrsh-0.142`
+3. point your browser to `localhost:8080`
+4. profit!
+</details>
+
+<details>
+<summary>build using nix</summary>
+
+1. `nix-build -E "with import <nixpkgs> { }; callPackage ./nix/xrsh-package.nix"`
+2. optionally see the other nix-files in `nix`-folder
 </details>
 
 <details>
