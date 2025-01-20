@@ -19,7 +19,7 @@ See [the wiki here](https://forgejo.isvery.ninja/xrsh/xrsh/wiki/Home#milestones)
 > NOTE: installation is optional: just surf to the public version [here](https://xrsh.isvery.ninja)
 
 <details>
-    <summary>install without nix</summary>
+    <summary>run standalone binary</summary>
 
 1. Download [xrsh.com](https://forgejo.isvery.ninja/xrsh/xrsh/raw/branch/main/xrsh.com)
 2. optional: run `unzip xrsh.com` to verify repository contents
@@ -36,6 +36,35 @@ See [the wiki here](https://forgejo.isvery.ninja/xrsh/xrsh/wiki/Home#milestones)
 2. `thttpd -p 8080 -d /nix/store/5q4vd50gmh52jh48z62ln1j05xzfh1fz-xrsh-0.142`
 3. point your browser to `localhost:8080`
 4. profit!
+</details>
+
+<summary>run OCI container [podman/docker]</summary>
+<details>
+
+1. `$(which podman || which docker) run -p 8080:8080 docker.io/coderofsalvation/xrsh`
+2. point your browser to `localhost:8080`
+3. profit!
+
+> NOTE 1: to add files use the `-D <dir>` overlay webroot parameter.
+
+> NOTE 2: to enable SSL and add (iso)file try something like this:
+
+```
+$ mkdir data
+$ cp ../xrsh.iso data/. # copy custom iso
+$ $(which podman || which docker) run -p 8080:8080 -v data/cert:etc/cert -v data:/data docker.io/coderofsalvation/xrsh /xrsh.com -D /data -c 0 -C /etc/cert/cert.pem -K /etc/cert/key.pem
+```
+
+> or as an exercise in constructive laziness setup a reverse proxy like [zoraxy](https://github.com/tobychui/zoraxy), [go-proxy](https://github.com/yusing/go-proxy), [droxy], caddy or nginx-reverse-proxymanager.   
+
+</details>
+
+<details>
+<summary>install in yunohost</summary>
+
+1. search for xrsh in the application catalog 
+2. click install
+3. profit!
 </details>
 
 <details>
